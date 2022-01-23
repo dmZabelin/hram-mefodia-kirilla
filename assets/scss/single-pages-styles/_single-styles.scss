@@ -1,0 +1,165 @@
+section.single-post {
+	padding-top: 12rem;
+	padding-bottom: 5rem;
+}
+.post-content {
+	line-height: 1.5;
+}
+.screen-reader-text {
+	display: none;
+}
+.navigation.post-navigation {
+	margin-top: 5rem;
+}
+.nav-links {
+	display: flex;
+	a {
+		position: relative;
+		font-weight: 600;
+		&::after {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 1px;
+			bottom: -0.2rem;
+			left: 0;
+			background: $m_color;
+			@include transition(ease, 0.5s);
+		}
+		&:hover {
+			&::after {
+				transform: scaleX(0.5);
+			}
+		}
+	}
+}
+.nav-next {
+	margin-left: auto;
+}
+.nav-previous {
+	margin-right: auto;
+}
+.comment-form-comment {
+	margin: 3rem 0 2rem 0;
+	width: 100%;
+	label {
+		display: none;
+	}
+	textarea {
+		width: 100%;
+		min-height: 15rem;
+		box-sizing: border-box;
+		padding: 1.5rem;
+		resize: none;
+		font-size: 1.4rem;
+		font-family: $m_font;
+		color: $m_color;
+		border: 1px solid $m_color;
+		&:focus {
+			border: 1px solid $m_color;
+		}
+		&.error {
+			border: 1px solid $red;
+		}
+	}
+}
+.comments-area {
+	max-width: 65rem;
+	margin: auto;
+	margin-top: 5rem;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+	margin-bottom: 3rem;
+	input {
+		color: $m_color;
+		font-size: 1.4rem;
+		font-family: $m_font;
+		line-height: 1.5em;
+		width: 100%;
+		padding: 1.5rem;
+		box-sizing: border-box;
+		border: 1px solid $m_color;
+		&:focus {
+			border: 1px solid $m_color;
+		}
+		&.error {
+			border: 1px solid $red;
+		}
+	}
+}
+.comment-list {
+	margin-bottom: 5rem;
+}
+ul.children {
+	padding-left: 3rem;
+}
+.comment-body {
+	margin-bottom: 3rem;
+	p {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		padding: 1rem 0 1rem 2rem;
+		border-left: 4px solid $blue;
+	}
+}
+.comment-author {
+	img {
+		margin-right: 1rem;
+	}
+	font-weight: 600;
+}
+.comment-meta.commentmetadata {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+}
+.comment-edit-link {
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+.post-content {
+	max-width: 97rem;
+	margin: auto;
+}
+
+.social-shared {
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 4rem;
+}
+.social-shared__desc {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.social-shared__link {
+	font-size: 3rem;
+	margin-right: 1.5rem;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.post-item__info {
+	padding-top: 3rem;
+	h4 {
+		margin-bottom: 3rem;
+	}
+	p {
+		max-width: 55rem;
+	}
+}
+
+.post-item_left {
+	.post-item__info {
+		margin-left: 5rem;
+	}
+}
+.post-item_right {
+	.post-item__info {
+		margin-right: 5rem;
+	}
+}

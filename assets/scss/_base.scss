@@ -1,0 +1,316 @@
+/* == БАЗОВЫЕ СТИЛИ == */
+html {
+	font-size: 62.5%;
+}
+body {
+	font: 400 1.6rem $m_font;
+	color: $m_color;
+}
+.wrapper {
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+section {
+	padding-top: 3.5rem;
+	padding-bottom: 3.5rem;
+}
+.container {
+	width: 100%;
+	max-width: 117rem;
+	margin: 0 auto;
+}
+h2 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	text-align: center;
+	img {
+		display: block;
+		margin: auto;
+		margin-top: 1em;
+	}
+	margin-bottom: 4rem;
+}
+h3 {
+	font-size: 1.8rem;
+	font-weight: 800;
+}
+h4 {
+	font-size: 1.8rem;
+	font-weight: 800;
+}
+
+/*== ОБЩИЕ СТИЛИ ==*/
+
+.audio-modal {
+	background: none;
+}
+
+.section-link {
+	position: relative;
+	font-size: 1.8rem;
+	font-weight: 700;
+	display: block;
+	margin: 1.66em auto 0;
+	max-width: 7.22em;
+	text-align: center;
+	color: $m_color;
+	&:after {
+		content: "";
+		width: 100%;
+		height: 1px;
+		background: $m_color;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		@include transition(ease, 0.5s);
+	}
+	&:hover {
+		&:after {
+			transform: scaleX(0);
+		}
+	}
+}
+
+// Стили кнопок
+.btn,
+.submit,
+.reply a {
+	width: 100%;
+	max-width: 17.86em;
+	height: 57px;
+	background: $m_color;
+	text-transform: uppercase;
+	color: #fff;
+	border: none;
+	border: 1px solid transparent;
+	display: block;
+	cursor: pointer;
+	transition: all ease 0.7s;
+	text-align: center;
+	font-weight: 600;
+	&:hover {
+		color: $m_color;
+		background: transparent;
+		border: 1px solid $m_color;
+	}
+}
+.submit {
+	max-width: none;
+	margin-top: 2rem;
+}
+.reply a {
+	max-width: 10rem;
+	text-transform: capitalize;
+	height: auto;
+	padding: 0.5rem;
+}
+
+// Стили Гамбургер-меню
+.humburger-wrap {
+	display: none !important;
+	span:last-child {
+		margin-left: 1.3rem;
+		font-size: 1.8rem;
+	}
+}
+.humburger {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 20px;
+	cursor: pointer;
+	span {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 2px;
+		-webkit-transition: 0.5s;
+		-moz-transition: 0.5s;
+		-o-transition: 0.5s;
+		transition: 0.5s;
+		background: $white;
+		&:nth-child(2) {
+			top: 50%;
+			margin-top: -1px;
+		}
+		&:nth-child(1) {
+			top: 0;
+		}
+		&:nth-child(3) {
+			bottom: 0;
+			margin-left: 0;
+			padding-top: 0;
+		}
+	}
+}
+.mh_active {
+	span:nth-child(1) {
+		top: 9px;
+		transform: rotate(45deg);
+	}
+	span:nth-child(2) {
+		width: 0;
+		opacity: 0;
+	}
+	span:nth-child(3) {
+		bottom: 9px;
+		transform: rotate(-45deg);
+	}
+}
+
+.menu-open {
+	position: fixed;
+	z-index: 98;
+	top: 0;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding-top: 13rem;
+	transition: 1s;
+	transform: translate3d(-100%, 0, 0);
+	text-align: center;
+	background: $blue;
+	align-items: flex-start;
+	justify-content: center;
+	opacity: 0.9;
+}
+.mobile-menu {
+	margin-top: 3rem;
+	li {
+		margin-bottom: 3rem;
+		text-transform: uppercase;
+		a {
+			color: $white;
+			font-size: 2rem;
+		}
+	}
+}
+.menu-show {
+	transform: translateZ(0);
+}
+
+/*== Стили объявления на главной ==*/
+article.poster {
+	padding-top: 9rem;
+	padding-bottom: 3rem;
+	.poster-item__desc {
+		font-size: 2rem;
+		margin-left: 5rem;
+		span {
+			display: block;
+			font-weight: 700;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			&:last-child {
+				font-size: 1.6rem;
+				margin-top: 1.5rem;
+				text-align: right;
+			}
+		}
+	}
+	.poster-item {
+		width: 100%;
+		max-width: 117rem;
+		background: $white;
+		padding: 1.25em 6.375em 1.25em 1.55em;
+		margin-bottom: 5rem;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -20px;
+			left: -10px;
+			width: 30%;
+			height: 50%;
+			border-top: 2px solid $m_color;
+			border-left: 2px solid $m_color;
+		}
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -10px;
+			right: 0;
+			width: 30%;
+			height: 50%;
+			border-bottom: 2px solid $m_color;
+			border-right: 2px solid $m_color;
+		}
+	}
+	.poster-item__image {
+		width: 35%;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.poster-item__title {
+		font-size: 2.8rem;
+		text-transform: uppercase;
+		margin-top: 1.58em;
+		margin-bottom: 3rem;
+	}
+	.poster-item__info {
+		align-self: flex-start;
+	}
+	.poster-item__desc {
+		text-align: left;
+		line-height: 1.5;
+	}
+}
+
+/*== Стили линков слово настоятеля ==*/
+.word-link-wrapper,
+.category-link-wrapper,
+.preaching-link-wrapper {
+	margin-bottom: 4rem;
+	span {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+	a {
+		text-transform: uppercase;
+		font-size: 1.8rem;
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: auto;
+			width: 0;
+			height: 1px;
+			left: 50%;
+			bottom: -0.2rem;
+			transform: translateX(-50%);
+			background: $m_color;
+			@include transition(ease, 0.2s);
+		}
+		&.active {
+			color: $red;
+			opacity: 0.8;
+			&::after {
+				width: 50%;
+				background: $red;
+			}
+		}
+	}
+}
+
+.category-link-wrapper {
+	max-width: 60rem;
+	margin: auto;
+	a {
+		font-size: 1.6rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.fancybox-bg {
+	background: $m_color;
+	opacity: 0.8;
+}

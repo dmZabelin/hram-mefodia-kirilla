@@ -1,0 +1,150 @@
+.uncos-block {
+	justify-content: center;
+}
+.uncos-item {
+	width: 50%;
+}
+.uncos-main {
+	margin-right: 3rem;
+}
+.uncos-main__desc {
+	line-height: 1.5em;
+	letter-spacing: 0.02em;
+	margin-top: 2.5rem;
+}
+.uncos-main__info-respons {
+	margin: 0 auto 2.5em;
+	position: relative;
+	height: 0;
+	padding-top: 61.4%;
+}
+.uncos-main__info {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	box-shadow: inset 0px -180px 50px -50px rgba(0, 52, 82, 0.5);
+	overflow: hidden;
+	a {
+		display: block;
+		height: 100%;
+	}
+	img {
+		@include img-full;
+		@include transition(ease, 0.3s);
+		z-index: -1;
+	}
+	&:hover img {
+		transform: scale(1.02) translate(-50%, -50%);
+	}
+}
+.uncos-main__title {
+	position: absolute;
+	bottom: 2.5rem;
+	left: 2rem;
+	max-width: 48rem;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 900;
+	letter-spacing: 0.05em;
+	a {
+		color: inherit;
+	}
+}
+.uncos-main__stat,
+.uncos-all__stat {
+	font-size: 1.4rem;
+	font-style: italic;
+	span {
+		display: inline-block;
+		margin-left: 1.5rem;
+		img {
+			margin-top: -0.2rem;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	span:first-child {
+		padding-left: 0;
+	}
+	span:nth-child(2) {
+		img {
+			width: 1.2rem;
+		}
+	}
+}
+.uncos-main__link {
+	font-style: italic;
+	border-bottom: 1px solid $m_color;
+	color: $m_color;
+	font-weight: 600;
+	font-size: 1.4rem;
+	@include transition(ease, 0.3s);
+	&:hover {
+		border-bottom: 1px solid transparent;
+	}
+}
+.uncos-all {
+	overflow: auto;
+	height: 54rem;
+	position: relative;
+}
+.uncos-all__pic {
+	width: 42.5%;
+	margin-right: 3.5%;
+	overflow: hidden;
+	cursor: pointer;
+	img {
+		@include transition(ease, 0.5s);
+		width: 100%;
+	}
+	&:hover {
+		img {
+			transform: scale(1.02);
+		}
+	}
+}
+.uncos-all__info {
+	width: 54%;
+	padding-right: 1rem;
+}
+.uncos-all__desc,
+.uncos-main__desc {
+	margin-bottom: 1.5rem;
+}
+.uncos-all__wrap {
+	margin-bottom: 2.5rem;
+}
+.uncos-all__wrap:last-child {
+	margin-bottom: 0;
+}
+.uncos-all__title {
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	a {
+		color: inherit;
+	}
+	@include transition(ease, 0.5s);
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+//Стилизуем скролл
+.uncos-all::-webkit-scrollbar-track {
+	border-radius: 4px;
+}
+.uncos-all::-webkit-scrollbar {
+	width: 6px;
+}
+.uncos-all::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: #f0f2f5;
+}
+.uncos-all:hover::-webkit-scrollbar-thumb {
+	background: $blue;
+}

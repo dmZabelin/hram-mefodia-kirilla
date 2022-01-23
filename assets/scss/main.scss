@@ -1,0 +1,41 @@
+@import "vars";
+@import "mixins";
+@import "reset";
+@import "libs";
+@import "fonts";
+@import "functions";
+@import "base";
+@import "animation";
+
+@import "header-styles";
+
+/*===============
+= = = PAGES = = =
+=================*/
+@import "home-page-styles/main-screen-styles";
+@import "home-page-styles/shedule-styles";
+@import "home-page-styles/uncos-styles";
+@import "home-page-styles/abbot-styles";
+@import "home-page-styles/preaching-styles";
+@import "home-page-styles/gallery-styles";
+
+@import "about-page-styles/about-styles";
+@import "about-page-styles/clergy-styles";
+
+@import "info-page-styles/info-styles";
+
+@import "contacts-page-styles/contacts-styles";
+
+@import "single-pages-styles/single-styles";
+@import "archive-pages-styles/archive-styles";
+@import "category-pages-styles/category-styles";
+
+@import "footer-styles";
+@import "popup-styles";
+
+/* == PRIORITY STYLES == */
+@import "priority";
+
+/* == MEDIA QUERIES == */
+//@import 'responsive-large';
+@import "responsive";

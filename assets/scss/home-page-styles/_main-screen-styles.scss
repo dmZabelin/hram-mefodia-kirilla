@@ -1,0 +1,127 @@
+section.main-screen {
+	padding-top: 6rem;
+	padding-bottom: 0;
+}
+.main-info {
+	width: 50%;
+	padding-bottom: 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.main-info__title {
+	background-color: $white;
+	max-width: 71rem;
+	padding: 2rem 0 4rem 4rem;
+	margin-right: -11rem;
+	h1 {
+		font: 400 4.8rem $s_font;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		span:first-child {
+			font-size: 3rem;
+			letter-spacing: 0.02em;
+		}
+	}
+	position: relative;
+	z-index: 2;
+	img {
+		position: absolute;
+		top: 0;
+		left: -2.5rem;
+	}
+	p {
+		font-size: 1.8rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		padding-top: 1.5rem;
+		letter-spacing: 0.05em;
+	}
+}
+.main-info__image {
+	img {
+		max-width: 15rem;
+		margin-right: 25.5rem;
+	}
+}
+.main-info__contacts {
+	position: relative;
+	max-width: 35rem;
+	margin-top: 2rem;
+	margin-right: 12rem;
+	i.fas {
+		position: absolute;
+		font-size: 2.5rem;
+		opacity: 0.5;
+		top: -0.5rem;
+		left: -3rem;
+	}
+	.address {
+		font-style: normal;
+		line-height: 1.5em;
+		letter-spacing: 0.05em;
+		font-size: 1.8rem;
+	}
+	.phone {
+		margin-top: 3rem;
+		font-size: 2.2rem;
+		a {
+			color: inherit;
+			&.phone__mobile {
+				display: block;
+				max-width: 20rem;
+				margin-bottom: 0.5rem;
+			}
+			&.phone__google {
+				margin-left: 3rem;
+				img {
+					max-width: 3rem;
+					margin-top: -0.8rem;
+				}
+			}
+			&.phone__2gis {
+				margin-left: 3rem;
+				img {
+					max-width: 6rem;
+					margin-top: -0.8rem;
+				}
+			}
+		}
+	}
+}
+.main-slider {
+	width: 50%;
+	.slick-list,
+	.slick-track {
+		height: 100%;
+	}
+	.slick-dots {
+		position: absolute;
+		right: 30px;
+		top: 250px;
+		z-index: 20;
+		li {
+			button {
+				font-size: 0;
+				border-radius: 100%;
+				background-color: white;
+				border: none;
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				padding: 0;
+				opacity: 0.5;
+				cursor: pointer;
+			}
+			&.slick-active {
+				button {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+.main-slider__image {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
