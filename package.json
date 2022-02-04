@@ -1,0 +1,44 @@
+{
+  "name": "hram-kirilla-mefodia",
+  "version": "2.0.0",
+  "description": "Сайт храма Мефодия и Кирилла.",
+  "type": "module",
+  "main": "index.js",
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmZabelin/hram-mefodia-kirilla.git"
+  },
+  "author": "Dmitry Zabelin <https://dmzabelin.online>",
+  "license": "ISC",
+  "homepage": "https://hram-kirilla-mefodiya.od.ua/",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-shorthand": "^1.1.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "sass": "^1.45.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-babel": "^8.0.0",
+    "webpack": "^5.65.0",
+    "webpack-stream": "^7.0.0"
+  }
+}

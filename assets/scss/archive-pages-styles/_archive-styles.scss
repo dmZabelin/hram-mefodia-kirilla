@@ -48,10 +48,11 @@ section.archive {
 	}
 }
 .community-card__title,
-.preaching-card__title {
+.preaching-card__title,
+.info-card__title {
 	padding: 0.625em;
 	background: #becddf;
-	max-width: 23rem;
+	width: calc(100% - 1.7rem);
 	margin: -4rem auto auto;
 	position: relative;
 	z-index: 1;
@@ -153,6 +154,7 @@ section.archive {
 	&__title {
 		width: 70%;
 		font-weight: 600;
+		font-size: 1.8rem;
 	}
 	&__date,
 	&__title {

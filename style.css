@@ -4,9 +4,6 @@ Author: Dm-Zabelin
 Version: 1.0.0
 Text Domain: dmz_hram_site
 */
-.info-card__title {
-    font-size: 1.6rem;
-}
 .info-card__title span {
     display: block;
     text-transform: lowercase;
