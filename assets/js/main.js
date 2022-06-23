@@ -48,7 +48,7 @@ jQuery(function ($) {
 		$(document).on('click', '.answers-info__close', function (e) {
 			e.preventDefault();
 			$(this).parent().find('.answers-info__answer').slideToggle('slow');
-			$(this).find('i.fas').toggleClass('active');
+			$(this).find('svg').toggleClass('active');
 		});
 	}
 
@@ -237,7 +237,7 @@ jQuery(function ($) {
 
 	// Клики по вкладкам.
 	$('.word').on('click', function (e) {
-		e.preventDefault;
+		e.preventDefault();
 		tab_word.hide();
 		tab_word.filter(this.hash).show();
 		$(".preaching-slider").slick('refresh');

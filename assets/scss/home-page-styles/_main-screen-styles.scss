@@ -49,12 +49,15 @@ section.main-screen {
 	max-width: 35rem;
 	margin-top: 2rem;
 	margin-right: 12rem;
-	i.fas {
+	svg {
 		position: absolute;
-		font-size: 2.5rem;
+		width: 2rem;
 		opacity: 0.5;
 		top: -0.5rem;
 		left: -3rem;
+		path {
+			fill: $m_color;
+		}
 	}
 	.address {
 		font-style: normal;

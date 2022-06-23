@@ -25,6 +25,15 @@
 		object-fit: cover;
 	}
 }
+.info-card__title {
+	padding: 0.625em;
+	background: #becddf;
+	max-width: 23rem;
+	margin: -4rem auto auto;
+	position: relative;
+	z-index: 1;
+	text-transform: uppercase;
+}
 .info-card__desc {
 	margin: 1.5rem 0;
 	padding: 0 1rem;

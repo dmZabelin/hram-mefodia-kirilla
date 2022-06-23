@@ -15,7 +15,10 @@ add_action( 'init', function()
 	pll_register_string( 'dmz_theme_strings', 'на завтра' );
 
 	pll_register_string( 'dmz_theme_strings', 'Полезная информация' );
+	pll_register_string( 'dmz_theme_strings', 'Одесская Епархия' );
 	pll_register_string( 'dmz_theme_strings', 'Cлово настоятеля' );
+	pll_register_string( 'dmz_theme_strings', 'Проповеди настоятеля' );
+	pll_register_string( 'dmz_theme_strings', 'Литературные беседы' );
 	pll_register_string( 'dmz_theme_strings', 'Расписание Богослужений' );
 	pll_register_string( 'dmz_theme_strings', 'О Настоятеле храма' );
 	pll_register_string( 'dmz_theme_strings', 'Проповеди' );
@@ -54,7 +57,9 @@ add_action( 'init', function()
 	pll_register_string( 'dmz_theme_strings', 'Владимир Юрьевич Корецкий<span>Протоиерей</span>' );
 
 	pll_register_string( 'dmz_theme_strings', 'Ошибка. Вы не прошли проверку reCaptcha' );
-		
+	pll_register_string( 'dmz_theme_strings', '<span>Протоиерей</span>Владимир Юрьевич Корецкий' );
+	pll_register_string( 'dmz_theme_strings', 'В 1996-ом, Господь призвал на служение в священном сане.<br>4 августа был рукоположен Преосвященнейшим Епископом Тульчинским и Брацлавским Иннокентием. Служение начал в Тульчинской епархии. В 2009-м г. по возвращении в Одессу получил указ Высокопреосвященнейшего Митрополита Одесского и Измаильского Агафангела на настоятельство в храме равноапостольных Мефодия и Кирилла.' );
+
 } );
 
 // *Кастомные размеры картинок

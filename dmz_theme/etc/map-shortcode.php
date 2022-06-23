@@ -56,7 +56,7 @@ if ( !function_exists( 'dmz_google_map' ) )
 	//Loads Google Map API
 	function dmz_map_load_scripts() 
 	{
-		wp_register_script( 'google-maps-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA7fOr4hUJ-VG92YPty5fCkdnYtTeqZ7Ro&callback=initMap' );
+		wp_register_script( 'google-maps-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ARC4fNlR-8UD8bMnbTF6GXgs8dgmr1Q&callback=initMap' );
 	}
 	add_action( 'wp_enqueue_scripts', 'dmz_map_load_scripts' );
 }

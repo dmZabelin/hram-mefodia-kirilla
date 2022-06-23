@@ -2,7 +2,7 @@ const pathSrc = "./assets";
 const pathDest = "./assets/dist";
 
 export default {
-    root: "./assets/dist/app",
+    root: "./assets/dist",
     scss: {
         src: pathSrc + "/scss/*.scss",
         watch: pathSrc + "/scss/**/*.scss",
@@ -11,11 +11,11 @@ export default {
     css: {
         src: pathSrc + "/scss/*.css",
         watch: pathSrc + "/scss/**/*.css",
-        dest: pathDest + "/app"
+        dest: pathDest
     },
     js: {
         src: pathSrc + "/js/*.js",
         watch: pathSrc + "/js/**/*.js",
-        dest: pathDest + "/app"
+        dest: pathDest
     }
 }

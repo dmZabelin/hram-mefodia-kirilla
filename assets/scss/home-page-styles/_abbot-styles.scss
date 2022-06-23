@@ -100,12 +100,15 @@
 }
 .answers-info__close {
 	position: absolute;
-	font-size: 3rem;
+	width: 2.5rem;
 	top: 2rem;
 	right: 2rem;
 	cursor: pointer;
-	i.fas {
+	svg {
 		@include transition(ease, 0.5s);
+		path {
+			fill: $m_color;
+		}
 	}
 	.active {
 		transform: rotate(180deg);

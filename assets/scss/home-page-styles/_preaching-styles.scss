@@ -94,6 +94,12 @@
 					width: 100%;
 				}
 			}
+			.preaching-image__links_video {
+				background-color: $red;
+			}
+			.preaching-image__links_read {
+				background-color: $m_color;
+			}
 			.preaching-image__links {
 				display: inline-block;
 				width: 7rem;
@@ -105,18 +111,18 @@
 				color: #fff;
 				@include flex-center;
 				@include transition(ease, 0.1s);
-				i.fas {
-					padding-left: 0.2rem;
+				svg {
+					width: 2.5rem;
+					transition: transform .1s ease;
+					path {
+						fill: white;
+					}
 				}
 				&:hover {
-					transform: scale(0.95);
+					svg {
+						transform: scale(1.05);
+					}
 				}
-			}
-			.preaching-image__links_video {
-				background-color: $red;
-			}
-			.preaching-image__links_read {
-				background-color: $m_color;
 			}
 			.preaching-image__date {
 				font-size: 1.8rem;
@@ -222,11 +228,12 @@
 .preaching-item__video,
 .preaching-item__read {
 	margin-left: 1rem;
-	i.fas {
-		@include transition(ease, 0.1s);
-	}
-	&:hover i.fas {
-		transform: scale(0.9);
+	svg {
+		width: 1.5rem;
+		margin-bottom: -.4rem;
+		path {
+			fill: #6b0e02;
+		}
 	}
 }
 .preaching-item__video {

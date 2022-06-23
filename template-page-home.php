@@ -31,7 +31,7 @@ get_header();
 				</p>
 			</div>
 			<div class="main-info__contacts">
-				<i class="fas fa-map-marker-alt"></i>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg>
 				<div class="address">
 					<?php echo dmz_wp_kses( dmz_get_meta( 'geo_address' ) ); ?>
 				</div>
@@ -266,7 +266,7 @@ get_header();
 												<?php endif; ?>
 												<?php if( dmz_get_meta( 'word_abbot-word' ) ): ?>
 													<a class="preaching-image__links preaching-image__links_video" href="<?php echo esc_url( dmz_get_meta( 'word_abbot-word' ) ); ?>" data-fancybox>
-														<i class="fas fa-play"></i>
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
 													</a>
 												<?php endif; ?>
 											</div>
@@ -293,7 +293,7 @@ get_header();
 										</span>
 										<?php if( dmz_get_meta( 'word_abbot-word' ) ): ?>
 											<a class="preaching-item__video" href="<?php echo esc_url( dmz_get_meta( 'word_abbot-word' ) ); ?>" data-fancybox>
-												<i class="fas fa-play"></i>
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
 											</a>
 										<?php endif; ?>
 										<h4 class="preaching-item__title">
@@ -338,7 +338,7 @@ get_header();
 												<?php endif; ?>
 												<?php if( dmz_get_meta( 'word_abbot-word' ) ): ?>
 													<a class="preaching-image__links preaching-image__links_video" href="<?php echo esc_url( dmz_get_meta( 'word_abbot-word' ) ); ?>" data-fancybox>
-														<i class="fas fa-play"></i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
 													</a>
 												<?php endif; ?>
 											</div>
@@ -365,7 +365,7 @@ get_header();
 										</span>
 										<?php if( dmz_get_meta( 'word_abbot-word' ) ): ?>
 											<a class="preaching-item__video" href="<?php echo esc_url( dmz_get_meta( 'word_abbot-word' ) ); ?>" data-fancybox>
-												<i class="fas fa-play"></i>
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
 											</a>
 										<?php endif; ?>
 										<h4 class="preaching-item__title">
@@ -418,12 +418,11 @@ get_header();
 					<div class="abbot-info__image"><img class="img-fluid" src="<?php echo esc_url( $dmz_link_assets . '/img/batushka.jpg' ); ?>" alt="Настоятель"></div>
 					<h3 class="abbot-info__name"><?php pll_e( '<span>Протоиерей</span>Владимир Юрьевич Корецкий' ); ?></h3>
 					<p class="abbot-info__txt">
-						В 1996-ом, Господь призвал на служение в священном сане.<br>
-						4 августа был рукоположен Преосвященнейшим Епископом Тульчинским и Брацлавским Иннокентием. Служение начал в Тульчинской епархии.
-						В 2009-м г. по возвращении в Одессу получил указ Высокопреосвященнейшего Митрополита Одесского и Измаильского Агафангела на настоятельство в храме равноапостольных Мефодия и Кирилла.
+					<?php pll_e('В 1996-ом, Господь призвал на служение в священном сане.<br>4 августа был рукоположен Преосвященнейшим Епископом Тульчинским и Брацлавским Иннокентием. Служение начал в Тульчинской епархии. В 2009-м г. по возвращении в Одессу получил указ Высокопреосвященнейшего Митрополита Одесского и Измаильского Агафангела на настоятельство в храме равноапостольных Мефодия и Кирилла.'); ?>
+
 						<a class="abbot-info__link" href="<?php
 							$lang_check = get_language_attributes();
-							echo ( $lang_check == 'lang="ru-RU"' ) ? get_home_url( null, 'clergy/vladimir-jurevich-koreckij/' ) : get_home_url( null, '' ); ?>">
+							echo ( $lang_check == 'lang="ru-RU"' ) ? get_home_url( null, 'ru/clergy/vladimir-jurevich-koreckij/' ) : get_home_url( null, 'uk/clergy/volodimir-jurjovich-koreckij/' ); ?>">
 							<?php pll_e( 'читать больше' ); ?>
 						</a>
 					</p>
@@ -448,7 +447,9 @@ get_header();
 
 					foreach( $dmz_answers_post as $post ):	setup_postdata( $post );?>
 					
-						<div class="answers-info"><span class="answers-info__close"><i class="fas fa-angle-up"></i></span>
+						<div class="answers-info"><span class="answers-info__close">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"/></svg>
+						</span>
 							<div class="answers-info__question">
 							<span class="answers-info__user-name"><?php the_title(); ?></span>
 								<?php echo dmz_get_meta( 'form_question' ); ?> 
