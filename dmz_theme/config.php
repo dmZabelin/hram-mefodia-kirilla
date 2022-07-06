@@ -15,6 +15,7 @@ add_action( 'init', function()
 	pll_register_string( 'dmz_theme_strings', 'на завтра' );
 
 	pll_register_string( 'dmz_theme_strings', 'Полезная информация' );
+	pll_register_string( 'dmz_theme_strings', 'Жизнь прихода' );
 	pll_register_string( 'dmz_theme_strings', 'Одесская Епархия' );
 	pll_register_string( 'dmz_theme_strings', 'Cлово настоятеля' );
 	pll_register_string( 'dmz_theme_strings', 'Проповеди настоятеля' );

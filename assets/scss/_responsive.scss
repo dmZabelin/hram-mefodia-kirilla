@@ -110,9 +110,9 @@
 
 	.gallery-box {
 		.gallery-item {
-			width: 19%;
-			&:nth-child(12),
-			&:nth-child(11) {
+			width: 23%;
+			&:nth-child(10),
+			&:nth-child(9) {
 				display: none;
 			}
 		}
@@ -219,9 +219,9 @@
 
 	.gallery-box {
 		.gallery-item {
-			width: 24%;
-			&:nth-child(10),
-			&:nth-child(9) {
+			width: 30%;
+			&:nth-child(8),
+			&:nth-child(7) {
 				display: none;
 			}
 		}
@@ -383,11 +383,7 @@
 	}
 	.gallery-box {
 		.gallery-item {
-			width: 32%;
-			&:nth-child(8),
-			&:nth-child(7) {
-				display: none;
-			}
+			width: 45%;
 		}
 	}
 	.preaching-slider {
@@ -512,15 +508,6 @@
 	}
 	.preaching-image figcaption .preaching-image__title {
 		font-size: 1.8rem;
-	}
-	.gallery-box {
-		.gallery-item {
-			width: 49%;
-			&:nth-child(6),
-			&:nth-child(5) {
-				display: none;
-			}
-		}
 	}
 	.word-link-wrapper,
 	.preaching-link-wrapper {
