@@ -1,3 +1,4 @@
+@import "../vars";
 section.single-post {
 	padding-top: 12rem;
 	padding-bottom: 5rem;
@@ -137,7 +138,12 @@ ul.children {
 	margin-bottom: 1rem;
 }
 .social-shared__link {
-	font-size: 3rem;
+	svg {
+		width: 3rem;
+		path {
+			fill: $m_color;
+		}
+	}
 	margin-right: 1.5rem;
 	&:last-child {
 		margin-right: 0;

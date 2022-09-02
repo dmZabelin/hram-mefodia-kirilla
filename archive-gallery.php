@@ -12,7 +12,7 @@
 	<section class="archive archive-gallery">
 		<div class="container">
 			<h2 class="archive-title">
-				Фотохроника
+				<?php pll_e( 'Фотохроника' ); ?>
 				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
 			</h2>
 			<div class="archive-content">

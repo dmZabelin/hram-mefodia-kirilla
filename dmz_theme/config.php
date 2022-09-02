@@ -24,6 +24,8 @@ add_action( 'init', function()
 	pll_register_string( 'dmz_theme_strings', 'О Настоятеле храма' );
 	pll_register_string( 'dmz_theme_strings', 'Проповеди' );
 	pll_register_string( 'dmz_theme_strings', 'Духовенство' );
+	pll_register_string( 'dmz_theme_strings', 'Фотохроника' );
+	pll_register_string( 'dmz_theme_strings', 'Клирики храма' );
 	pll_register_string( 'dmz_theme_strings', 'О храме' );
 	pll_register_string( 'dmz_theme_strings', 'Клуб «О православии с интересом»' );
 	pll_register_string( 'dmz_theme_strings', 'Таинства' );

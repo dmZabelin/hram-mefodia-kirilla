@@ -57,7 +57,7 @@
 			<section class="clergy" id="clergy">
 				<div class="container">
 					<h2 class="clergy-title">
-						Клирики храма 
+						<?php pll_e( 'Клирики храма' ); ?>
 						<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
 					</h2>
 					<div class="clergy-item d-flex justify-center">
