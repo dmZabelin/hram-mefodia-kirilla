@@ -790,25 +790,37 @@ add_action( 'init', function()
 			],
 		];
 
-		// ?-Мета-бокс "Годы жизни - Вечная память"-?
-			$meta_options[] = [
-				'id'				=> 'years-life',
-				'title'			=> esc_html__( 'Годы жизни', 'dmz_hram_site' ),
-				'post_type'		=> [ 'post' ],
-				'show_on'		=> [ 'key' => 'term', 'value' => ['eternal-memory'], ],
-				'taxonomy'		=> 'category',
-				'context'		=> 'normal',
-				'priority'		=>	'high',
-				'fields'			=> [ 
-					[
-						'type'		=>	'text',
-						'id'			=>	$prefix . 'person_life',
-						'title'		=>	'',
-						'desc'		=>	esc_html__( 'Введите в поле годы жизни', 'dmz_hram_site' ),
-						'std'			=> '',
-					],
-				],
-			];		
+			// ?-Мета-бокс "Поля описания проповеди"-?
+            		$meta_options[] = [
+            			'id'				=> 'dmz__meta_club',
+            			'title'			=> esc_html__( 'Поля описания', 'dmz_hram_site' ),
+            			'post_type'		=> [ 'club' ],
+            			//'show_on'		=> [ 'key' => 'page-template', 'value' => ['template-page-home.php'], ],
+            			'context'		=> 'normal',
+            			'priority'		=>	'high',
+            			'fields'			=> [
+            				[
+            					'type'		=> 'file',
+            					'id'			=> $prefix . 'foto_min_club',
+            					'title'		=> esc_html__( 'Фотография чтеца проповеди', 'dmz_hram_site' ),
+            					'desc'		=> esc_html__( 'Соотношение сторон 1:1', 'dmz_hram_site' ),
+            					'std'			=> '',
+            					'valbtn'		=> esc_html__('Загрузить', 'dmz_hram_site'),
+            				],[
+            					'type'		=>	'text',
+            					'id'			=>	$prefix . 'word_club',
+            					'title'		=>	esc_html__( 'Ссылка на Youtube', 'dmz_hram_site' ),
+            					'desc'		=>	esc_html__( 'Вставьте в поле ссылку с Youtube', 'dmz_hram_site' ),
+            					'std'			=> '',
+            				],[
+            					'type'		=>	'textarea',
+            					'id'			=>	$prefix . 'subtitle_club',
+            					'title'		=>	esc_html__( 'Краткое описание', 'dmz_hram_site' ),
+            					'desc'		=>	esc_html__( 'Описание', 'dmz_hram_site' ),
+            					'std'			=> '',
+            				],
+            			],
+            		];
 
 		// ?-Мета-бокс "Исторические факты"-?
 			$meta_options[] = [

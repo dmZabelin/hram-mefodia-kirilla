@@ -133,6 +133,22 @@ function dmz_get_post_types() {
 			'singular' => esc_html__( 'Клирики храма', 'dmz_hram_site' ),
 			'multiple' => esc_html__( 'Клирики храма', 'dmz_hram_site' ),
 		],
+
+		'club' => [
+			'config' => [
+					'public' => true,
+					'menu_position' => 5,
+					'menu_icon'     => 'dashicons-buddicons-buddypress-logo',
+					'supports'=> ['title', 'thumbnail', 'excerpt'],
+					'show_ui' => true,
+					'has_archive' => true,
+					'rewrite' => [
+						'with_front' => false,
+					],
+				],
+			'singular' => esc_html__( 'Клуб', 'dmz_hram_site' ),
+			'multiple' => esc_html__( 'Клуб', 'dmz_hram_site' ),
+		],
 	];
 }
 

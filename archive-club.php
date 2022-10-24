@@ -23,7 +23,7 @@
 				
 				$dmz_community_post = new WP_Query( [
 
-					'post_type'			=> 'community',
+					'post_type'			=> 'club',
 					'posts_per_page'	=> 12,
 					'paged'				=> $paged
 

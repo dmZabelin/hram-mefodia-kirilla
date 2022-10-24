@@ -21,6 +21,9 @@
 								<?php the_title(); ?>
 								<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
 							</h2>
+							<p class="post-subtitle">
+							    <?php echo get_the_excerpt(); ?>
+							</p>
 							<div class="post-content">
 							<?php 
 								$post_id = get_the_ID();
