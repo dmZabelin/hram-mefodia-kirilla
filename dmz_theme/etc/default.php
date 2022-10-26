@@ -297,13 +297,13 @@ add_action( 'restrict_manage_posts', 'add_admin_filters', 10, 1 );
  
   function add_admin_filters( $post_type ) 
   {
-
+    $taxonomies_slug = '';
 	if( 'about' == $post_type ):
 			$taxonomies_slug = 'about-category';
 	elseif( 'abbot-word' == $post_type ):
 		$taxonomies_slug = 'abbot-word-category';
 	endif;
-	
+	    echo $post_type;
 		$taxonomy = get_taxonomy( $taxonomies_slug );
 		$selected = '';
 		$selected = isset( $_REQUEST[ $taxonomies_slug ] ) ? $_REQUEST[ $taxonomies_slug ] : '';

@@ -381,8 +381,71 @@ get_header();
 			</div>
 		</section>
 
-	<?php endif; 
+		<?php endif;
 
+            $dmz_posts = new WP_Query( [
+
+                'post_type'			=> 'club',
+                'posts_per_page'	=> 10,
+
+            ] );
+            if( dmz_get_meta( 'on_of_uncos' ) === 'enable' && $dmz_posts ): ?>
+
+            <section class="uncos" id="uncos">
+                <div class="container">
+                    <h2 class="uncos-title">
+                       <?php pll_e( 'Клуб «О православии с интересом»' ); ?>
+                        <img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+                    </h2>
+                    <div class="uncos-block d-flex">
+                    <?php
+                            if( $dmz_posts->have_posts() ) : while ( $dmz_posts->have_posts() ) : $dmz_posts-> the_post();								?>
+
+                                <div class="preaching-card">
+                                    <a class="preaching-card__image" href="<?php echo esc_url( get_permalink() ); ?>">
+                                    <?php if( get_the_post_thumbnail_url( $post->ID,'min_news' ) ): ?>
+                                        <img src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID,'min_news' ) ); ?>" alt="<?php the_title(); ?>">
+                                    <?php endif; ?>
+                                    </a>
+                                    <h4 class="preaching-card__title">
+                                        <a href="<?php echo esc_url( get_permalink() ); ?>">
+                                            <?php echo get_the_title(); ?>
+                                        </a>
+                                    </h4>
+                                    <p class="preaching-card__desc">
+                                        <?php echo get_the_excerpt(); ?>
+                                    </p>
+                                    <div class="preaching-card__wrapper">
+                                        <div class="preaching-card__stat">
+                                            <span class="preaching-card__see">
+                                            <img src="<?php echo esc_url( $dmz_link_assets . '/img/view.svg' ); ?>" alt="View">
+                                                <?php
+                                                    $dmz_views = get_post_meta( $post->ID, 'views', true );
+                                                    echo ( $dmz_views ) ? $dmz_views : '0'; ?>
+                                            </span>
+                                            <span class="preaching-card__comment">
+                                                <img src="<?php echo esc_url( $dmz_link_assets . '/img/comm.svg' ); ?>" alt="Comment">
+                                                <?php comments_number( '0', '1', '%' ); ?>
+                                            </span>
+                                        </div>
+                                        <a class="preaching-card__link" href="<?php echo esc_url( get_permalink() ); ?>">
+                                            <?php pll_e( 'подробнее' ); ?>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <?php endwhile; endif; wp_reset_postdata(); ?>
+                        </div>
+                    </div>
+                    <a class="section-link" href="<?php
+                        $lang_check = get_language_attributes();
+                        echo ( $lang_check == 'lang="ru-RU"' ) ? get_home_url( null, 'ru/club/' ) : get_home_url( null, 'uk/club/' ); ?>">
+                        <?php pll_e( 'читать больше' ); ?>
+                    </a>
+                </div>
+            </section>
+
+	<?php endif;
 		if( dmz_get_meta('on_of_abbot') === 'enable' ): ?>
 
 		<section class="abbot" id="abbot">
@@ -472,136 +535,6 @@ get_header();
 					</a>
 			<?php  endif; ?>
 		  		</div>
-		</section>
-
-	<?php endif; ?>
-
-	<?php	
-			$dmz_posts = new WP_Query( [
-
-				'post_type'			=> 'info',
-				'tax_query' 		=> [
-					[
-						'taxonomy' 	=> 'info-category',
-						'field'    	=> 'slug',
-						'terms'    	=> 'parish-life',
-					]
-				],
-				'posts_per_page'	=> 10,
-			
-			] );
-
-
-			if(is_array($dmz_posts) ) {
-				$pages_count = count( $dmz_posts );
-				} else {
-				$count = 0;
-				}
-				if ( $dmz_posts > $pages_count )
-				$count = $pages_count;
-			
-		if( dmz_get_meta( 'on_of_uncos' ) === 'enable' && $dmz_posts ): ?>
-		
-		<section class="uncos" id="uncos">
-			<div class="container">
-				<h2 class="uncos-title">
-				   <?php pll_e( 'Жизнь прихода' ); ?>
-					<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
-				</h2>
-				<div class="uncos-block d-flex">
-
-					<?php	
-						
-							$i = 0;
-							if( $dmz_posts->have_posts() ) : while ( $dmz_posts->have_posts() ) : $dmz_posts-> the_post();
-								if( $i == 0 ): ?>
-
-								<div class="uncos-item uncos-main">
-									<div class="uncos-main__info-respons">
-										<div class="uncos-main__info">
-											<?php if( get_the_post_thumbnail_url( $post->ID, 'big_news' ) ): ?>
-												<a href="<?php echo esc_url( get_permalink() ); ?>">
-													<img class="img-fluid" src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID,'big_news') ); ?>" alt="<?php the_title(); ?>">
-												</a>
-											<?php endif; ?>
-											<h3 class="uncos-main__title">
-												<a href="<?php echo esc_url( get_permalink() ); ?>">
-													<?php the_title(); ?>
-												</a>
-											</h3>
-										</div>
-									</div>
-									<p class="uncos-main__desc">
-										<?php esc_html_e( dmz_limit_excerpt( 50 ) ); ?>
-										<a class="uncos-main__link" href="<?php echo esc_url( get_permalink() ); ?>">
-										<?php pll_e( 'далее' ); ?>
-										</a>
-									</p>
-									<div class="uncos-main__stat"> 
-										<span class="uncos-main__date">
-											<?php echo esc_html( get_the_date( 'd.m.Y' ) ); ?>
-										</span>
-										<span class="uncos-main__see">
-											<img src="<?php echo esc_url( $dmz_link_assets . '/img/view.svg' ); ?>" alt="View">
-											<?php
-												$dmz_views = get_post_meta( $post->ID, 'views', true );
-												echo ( $dmz_views ) ? $dmz_views : '0';
-											?>
-										</span>
-										<span class="uncos-main__comment">
-											<img src="<?php echo esc_url( $dmz_link_assets . '/img/comm.svg' ); ?>" alt="Comment">
-											<?php comments_number( '0', '1', '%' ); ?>
-										</span>
-									</div>
-								</div>
-								<div class="uncos-item uncos-all <?php echo ( $count > 1 ) ? '' : esc_attr( 'd-none' ); ?> ">
-
-							<?php else: ?>
-
-								<div class="uncos-all__wrap d-flex">
-									<a class="uncos-all__pic" href="<?php echo esc_url( get_permalink() ); ?>">
-										<img src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID,'min_news' ) ); ?>" alt="<?php the_title(); ?>">
-									</a>
-									<div class="uncos-all__info">
-										<h3 class="uncos-all__title">
-											<a href="<?php echo esc_url( get_permalink() ); ?>">
-												<?php the_title(); ?>
-											</a>
-										</h3>
-										<p class="uncos-all__desc">
-											<?php echo esc_html( dmz_limit_excerpt( 15 ) ); ?>
-											<a class="uncos-main__link" href="<?php echo esc_url( get_permalink() ); ?>">
-												<?php pll_e( 'далее' ); ?>
-											</a>
-										</p>
-										<div class="uncos-all__stat">
-											<span class="uncos-all__date">
-												<?php echo esc_html( get_the_date( 'd m Y' ) ); ?>
-											</span>
-											<span class="uncos-all__see"> 
-												<img src="<?php echo esc_url( $dmz_link_assets . '/img/view.svg' ); ?>" alt="View">
-												<?php
-													$dmz_views = get_post_meta( $post->ID, 'views', true );
-													echo ( $dmz_views ) ? $dmz_views : '0';
-												?>
-											</span>
-											<span class="uncos-all__comment">
-												<img src="<?php echo esc_url( $dmz_link_assets . '/img/comm.svg' ); ?>" alt="Comment">
-												<?php comments_number( '0', '1', '%'); ?>
-											</span>
-										</div>
-									</div>
-								</div>
-
-								<?php endif; $i++; endwhile; endif; wp_reset_postdata(); ?>
-						</div>
-				</div>
-				<a class="section-link" href="<?php
-					$lang_check = get_language_attributes();
-					echo ( $lang_check == 'lang="ru-RU"' ) ? get_home_url( null, 'info-category/parish-life/' ) : get_home_url( null, '' ); ?>">
-					<?php pll_e( 'читать больше' ); ?>
-				</a>
-			</div>
 		</section>
 		
 	<?php endif;
