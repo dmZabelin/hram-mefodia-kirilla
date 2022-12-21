@@ -1,286 +1,295 @@
 jQuery(function ($) {
-	"use strict";
+  'use strict';
 
-	// Слайдеры
-	var $main_slider = $('.main-slider');
-	var $preaching_slider = $('.preaching-slider');
+  // Слайдеры
+  var $main_slider = $('.main-slider');
+  var $preaching_slider = $('.preaching-slider');
+  var $preaching_sliderMain = $('.preaching-slider-main');
 
-	if ($main_slider.length) {
-		$main_slider.slick({
-			arrows: false,
-			dots: true,
-			fade: true,
-			autoplay: true,
-			autoplaySpeed: 3000,
-			speed: 2500
-		});
-	}
+  if ($main_slider.length) {
+    $main_slider.slick({
+      arrows: false,
+      dots: true,
+      fade: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      speed: 2500,
+    });
+  }
 
-	if ($preaching_slider.length) {
-		$preaching_slider.slick({
-			dots: true,
-			slidesToShow: 3,
-			prevArrow: '<button class="slick-prev"><img src="https://hram-kirilla-mefodiya.od.ua/wp-content/themes/hram-kirilla-mefodiya/assets/img/back.png" alt="test"></button>',
-			nextArrow: '<button class="slick-next"><img src="https://hram-kirilla-mefodiya.od.ua/wp-content/themes/hram-kirilla-mefodiya/assets/img/next.png" alt="next"></button>',
-			responsive: [
-				{
-					breakpoint: 992,
-					settings: {
-						slidesToShow: 2
-					}
-				}, {
-					breakpoint: 768,
-					settings: {
-						slidesToShow: 2
-					}
-				}, {
-					breakpoint: 577,
-					settings: {
-						slidesToShow: 1
-					}
-				}
-			]
-		});
-	}
+  if ($preaching_slider.length) {
+    $preaching_slider.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.preaching-slider-main',
+      focusOnSelect: true,
+      slidesToShow: 3,
+      arrows: false,
+      centerMode: true,
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 577,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
+  }
 
-	// Аккардеон "Ответ - вопрос"
-	if ($('.answers-info__close').length) {
-		$(document).on('click', '.answers-info__close', function (e) {
-			e.preventDefault();
-			$(this).parent().find('.answers-info__answer').slideToggle('slow');
-			$(this).find('svg').toggleClass('active');
-		});
-	}
+  if ($preaching_sliderMain.length) {
+    $preaching_sliderMain.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      asNavFor: '.preaching-slider',
+      arrows: false,
+    });
 
-	// Меню Гамбургер, меню мобильная версия
-	$(".humburger").on('click', function (e) {
-		e.preventDefault;
-		$(this).toggleClass("mh_active");
-		$('.menu-open').toggleClass('menu-show');
-		$('body').toggleClass('hidden');
-	})
-	$('.mobileMenu li a').click(function (e) {
-		$('.humburger').removeClass('mh_active');
-		$('.menu-open').removeClass('menu-show');
-		$('body').removeClass('hidden');
-	});
+    $('.preaching-prev').click(function (e) {
+      $preaching_sliderMain.slick('slickPrev');
+    });
 
-	// AJAX подгрузка ответ вопрос
-	if ($('.load-more').length) {
-		var loading = false;
+    $('.preaching-next').click(function (e) {
+      $preaching_sliderMain.slick('slickNext');
+    });
+  }
 
-		$('.load-more').on('click', function (e) {
-			e.preventDefault();
-			var $offset = $(this).data('offset');
-			if (!loading) {
-				loading = true;
-				var data = {
-					action: 'dmz_ajax_load_more',
-					nonce: dmzloadmore.nonce,
-					offset: $offset,
-					beforeSend: function (xhr) {
-						$('.load-more span').text('Загрузка...');
-					},
-				};
+  // Аккардеон "Ответ - вопрос"
+  if ($('.answers-info__close').length) {
+    $(document).on('click', '.answers-info__close', function (e) {
+      e.preventDefault();
+      $(this).parent().find('.answers-info__answer').slideToggle('slow');
+      $(this).find('svg').toggleClass('active');
+    });
+  }
 
-				$.post(dmzloadmore.ajaxurl, data, function (res) {
+  // Меню Гамбургер, меню мобильная версия
+  $('.humburger').on('click', function (e) {
+    e.preventDefault;
+    $(this).toggleClass('mh_active');
+    $('.menu-open').toggleClass('menu-show');
+    $('body').toggleClass('hidden');
+  });
+  $('.mobileMenu li a').click(function (e) {
+    $('.humburger').removeClass('mh_active');
+    $('.menu-open').removeClass('menu-show');
+    $('body').removeClass('hidden');
+  });
 
-					if (res.success) {
-						$('.load-more span').text('еще...');
-						var $content = $(res.data);
+  // AJAX подгрузка ответ вопрос
+  if ($('.load-more').length) {
+    var loading = false;
 
-						$('.answers-item').append($content);
-						$('.load-more').data('offset', parseInt($offset + 3));
+    $('.load-more').on('click', function (e) {
+      e.preventDefault();
+      var $offset = $(this).data('offset');
+      if (!loading) {
+        loading = true;
+        var data = {
+          action: 'dmz_ajax_load_more',
+          nonce: dmzloadmore.nonce,
+          offset: $offset,
+          beforeSend: function (xhr) {
+            $('.load-more span').text('Загрузка...');
+          },
+        };
 
-						var num_one = $('.load-more').data('posts');
+        $.post(dmzloadmore.ajaxurl, data, function (res) {
+          if (res.success) {
+            $('.load-more span').text('еще...');
+            var $content = $(res.data);
 
-						if (num_one <= ($offset + 3)) {
-							$('.load-more').remove();
-						}
+            $('.answers-item').append($content);
+            $('.load-more').data('offset', parseInt($offset + 3));
 
-						loading = false;
-					} else {
-						//console.log(res);
-					}
-				}).fail(function (xhr, textStatus, e) {
-					//console.log(xhr.responseText);
-				});
-			}
-		});
+            var num_one = $('.load-more').data('posts');
 
-		$(document).ready(function () {
-			var num_one = $('.load-more').data('offset');
-			var num_two = $('.load-more').data('posts');
+            if (num_one <= $offset + 3) {
+              $('.load-more').remove();
+            }
 
-			if (num_one >= num_two) {
-				$('.load-more').remove();
-			}
-		});
+            loading = false;
+          } else {
+            //console.log(res);
+          }
+        }).fail(function (xhr, textStatus, e) {
+          //console.log(xhr.responseText);
+        });
+      }
+    });
 
-	}
+    $(document).ready(function () {
+      var num_one = $('.load-more').data('offset');
+      var num_two = $('.load-more').data('posts');
 
-	//Отправка формы
-	if ($('.abbot-form').length) {
+      if (num_one >= num_two) {
+        $('.load-more').remove();
+      }
+    });
+  }
 
-		$('.abbot-form').on('submit', function (e) {
-			e.preventDefault();
+  //Отправка формы
+  if ($('.abbot-form').length) {
+    $('.abbot-form').on('submit', function (e) {
+      e.preventDefault();
+    });
 
-		});
+    $.validator.addMethod(
+      'regex',
+      function (value, element, regexp) {
+        var re = new RegExp(regexp);
+        return this.optional(element) || re.test(value);
+      },
+      'Please check your input.',
+    );
 
-		$.validator.addMethod(
-			"regex",
-			function (value, element, regexp) {
-				var re = new RegExp(regexp);
-				return this.optional(element) || re.test(value);
-			},
-			"Please check your input."
-		);
+    // Проверка на валидацию формы
+    function valEl(el) {
+      el.validate({
+        rules: {
+          name: {
+            required: true,
+            regex: '^[A-Za-zА-Яа-яЁё\x20]{2,20}$',
+          },
+          email: {
+            required: false,
+            email: true,
+          },
+        },
+        messages: {
+          name: {
+            required: 'Поле обязательно для заполнения',
+            regex: 'Введите имя правильно',
+          },
+          email: {
+            required: false,
+            email: 'Введите e-mail правильно',
+          },
+        },
 
-		// Проверка на валидацию формы
-		function valEl(el) {
+        // Начинаем проверку id="" формы
+        submitHandler: function (form) {
+          var $form = $(form);
+          var $formId = $form.attr('id');
+          var response = grecaptcha.getResponse();
 
-			el.validate({
-				rules: {
-					name: {
-						required: true,
-						regex: '^[A-Za-zА-Яа-яЁё\x20]{2,20}$'
-					},
-					email: {
-						required: false,
-						email: true
-					}
-				},
-				messages: {
-					name: {
-						required: 'Поле обязательно для заполнения',
-						regex: 'Введите имя правильно'
-					},
-					email: {
-						required: false,
-						email: 'Введите e-mail правильно'
-					}
+          //Функция google recapcha
+          if (response.length == 0) {
+            $('.abbot-form .error-re').fadeIn();
+            return false;
+          } else {
+            if ($formId == 'abbot-form') {
+              $('.abbot-form .error-re').hide();
+              $('.abbot-form .loader').fadeIn();
+            }
 
-				},
+            switch ($formId) {
+              case 'abbot-form':
+                var data = $form.serialize();
 
-				// Начинаем проверку id="" формы
-				submitHandler: function (form) {
+                $.post(window.dmz_ajax.ajaxurl + '?action=homeanswer', data, 'json').always(
+                  function () {
+                    $('.abbot-form .loader').fadeOut();
+                    setTimeout(function () {
+                      $('.abbot-form .tnx').fadeIn();
+                      //строки для остлеживания целей в Я.Метрике и Google Analytics
+                    }, 500);
+                    setTimeout(function () {
+                      $('.abbot-form .tnx').fadeOut();
+                    }, 3000);
+                    $form.trigger('reset');
+                  },
+                );
 
-					var $form = $(form);
-					var $formId = $form.attr('id');
-					var response = grecaptcha.getResponse();
+                break;
+            }
 
-					//Функция google recapcha
-					if (response.length == 0) {
+            grecaptcha.reset();
 
-						$('.abbot-form .error-re').fadeIn();
-						return false;
+            return false;
+          }
+        },
+      });
+    }
 
-					} else {
+    // Запускаем механизм валидации форм
+    $('.abbot-form').each(function () {
+      valEl($(this));
+    });
+  }
 
-						if ($formId == 'abbot-form') {
-							$('.abbot-form .error-re').hide();
-							$('.abbot-form .loader').fadeIn();
-						}
+  //Расписание богослужений табы
+  var tab = $('.schedule-item-wrap .schedule-item-calendar');
+  tab.hide().filter(':first').show();
 
-						switch ($formId) {
-							case 'abbot-form':
+  // Клики по вкладкам.
+  $('.the-date').on('click', function (e) {
+    e.preventDefault;
+    tab.hide();
+    tab.filter(this.hash).show();
+    $('.the-date').removeClass('active');
+    $(this).addClass('active');
+    return false;
+  });
 
-								var data = $form.serialize();
+  //Слово настоятеля табы главная
+  var tab_word = $('.word-item-wrapper .word-item');
+  tab_word.hide().filter(':first').show();
 
-								$.post(window.dmz_ajax.ajaxurl + '?action=homeanswer', data, 'json')
-									.always(function () {
-										$('.abbot-form .loader').fadeOut();
-										setTimeout(function () {
-											$('.abbot-form .tnx').fadeIn();
-											//строки для остлеживания целей в Я.Метрике и Google Analytics
-										}, 500);
-										setTimeout(function () {
-											$('.abbot-form .tnx').fadeOut();
-										}, 3000);
-										$form.trigger('reset');
-									});
+  // Клики по вкладкам.
+  $('.word').on('click', function (e) {
+    e.preventDefault();
+    tab_word.hide();
+    tab_word.filter(this.hash).show();
+    $('.preaching-slider').slick('refresh');
+    $('.word').removeClass('active');
+    $(this).addClass('active');
+    return false;
+  });
 
-								break;
-						}
+  //Слово настоятеля табы страница архива
+  var tab_preaching = $('.preaching-items-wrapper .preaching-items');
+  tab_preaching.hide().filter(':first').show();
 
-						grecaptcha.reset();
+  // Клики по вкладкам.
+  $('.preaching-link').on('click', function (e) {
+    e.preventDefault;
+    tab_preaching.hide();
+    tab_preaching.filter(this.hash).show();
+    $('.preaching-link').removeClass('active');
+    $(this).addClass('active');
+    return false;
+  });
 
-						return false;
-					}
-				}
-			});
-		};
+  //Священослужители ТАБЫ
+  var tab_priests = $('.category-priests-tabs .priests-wrapper');
+  tab_priests.hide().filter(':first').show();
 
-		// Запускаем механизм валидации форм
-		$('.abbot-form').each(function () {
-			valEl($(this));
-		});
-	}
+  // Клики по вкладкам.
+  $('.category-link').on('click', function (e) {
+    e.preventDefault;
+    tab_priests.hide();
+    tab_priests.filter(this.hash).show();
+    $('.category-link').removeClass('active');
+    $(this).addClass('active');
+    return false;
+  });
 
-	//Расписание богослужений табы
-	var tab = $('.schedule-item-wrap .schedule-item-calendar');
-	tab.hide().filter(':first').show();
-
-	// Клики по вкладкам.
-	$('.the-date').on('click', function (e) {
-		e.preventDefault;
-		tab.hide();
-		tab.filter(this.hash).show();
-		$('.the-date').removeClass('active');
-		$(this).addClass('active');
-		return false;
-	});
-
-	//Слово настоятеля табы главная
-	var tab_word = $('.word-item-wrapper .word-item');
-	tab_word.hide().filter(':first').show();
-
-	// Клики по вкладкам.
-	$('.word').on('click', function (e) {
-		e.preventDefault();
-		tab_word.hide();
-		tab_word.filter(this.hash).show();
-		$(".preaching-slider").slick('refresh');
-		$('.word').removeClass('active');
-		$(this).addClass('active');
-		return false;
-	});
-
-	//Слово настоятеля табы страница архива
-	var tab_preaching = $('.preaching-items-wrapper .preaching-items');
-	tab_preaching.hide().filter(':first').show();
-
-	// Клики по вкладкам.
-	$('.preaching-link').on('click', function (e) {
-		e.preventDefault;
-		tab_preaching.hide();
-		tab_preaching.filter(this.hash).show();
-		$('.preaching-link').removeClass('active');
-		$(this).addClass('active');
-		return false;
-	});
-
-
-
-	//Священослужители ТАБЫ
-	var tab_priests = $('.category-priests-tabs .priests-wrapper');
-	tab_priests.hide().filter(':first').show();
-
-
-
-
-	// Клики по вкладкам.
-	$('.category-link').on('click', function (e) {
-		e.preventDefault;
-		tab_priests.hide();
-		tab_priests.filter(this.hash).show();
-		$('.category-link').removeClass('active');
-		$(this).addClass('active');
-		return false;
-	});
-
-	$('.not-active-link').on('click', function () {
-		return false;
-	});
-
+  $('.not-active-link').on('click', function () {
+    return false;
+  });
 });

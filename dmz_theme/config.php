@@ -4,6 +4,7 @@
 add_action( 'init', function() 
 {
 	pll_register_string( 'dmz_theme_strings', 'Храм святых равноапостольных' );
+	pll_register_string( 'dmz_theme_strings', 'г.' );
 	pll_register_string( 'dmz_theme_strings', 'Мефодия и Кирилла' );
 	pll_register_string( 'dmz_theme_strings', 'Кирилл и Мефодий' );
 	pll_register_string( 'dmz_theme_strings', 'Одесская епархия Украинской Православной Церкви' );

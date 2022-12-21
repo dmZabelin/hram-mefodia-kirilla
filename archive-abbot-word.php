@@ -60,6 +60,9 @@
 								</a>
 							</h4>
 							<p class="preaching-card__desc">
+								<span class="preaching-image__date"> 
+									<?php echo esc_html( get_the_date( 'd.m.Y' ) ); ?><?php pll_e( 'г.' ); ?>												
+								</span>
 								<?php echo dmz_wp_kses( dmz_get_meta( 'subtitle_abbot-word' ) ); ?>
 							</p>
 							<div class="preaching-card__wrapper">
