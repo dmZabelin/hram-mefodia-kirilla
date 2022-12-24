@@ -21,7 +21,7 @@
 
 							<h2 class="post-title text-center">
 								<?php the_title(); ?>
-								<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+								<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 							</h2>
 							<div class="post-content">
 								<?php the_content(); ?>

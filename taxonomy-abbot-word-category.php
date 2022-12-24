@@ -14,7 +14,7 @@
 		<div class="container">
 			<h2 class="archive-title">
 				<?php echo get_queried_object()->name; ?>
-				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 			</h2>
 			<div class="preaching-items d-flex wrap-wrap"> 
 				<?php 

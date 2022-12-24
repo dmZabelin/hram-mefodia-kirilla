@@ -128,7 +128,7 @@ get_header();
 										<?php pll_e( 'на завтра' ); ?>
 									</a>
 								</span>
-								<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+								<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 							</h2>
 							<div id="schedule-item-calendar_today" class="schedule-item-calendar">
 								<p class="schedule-data d-flex justify-center text-center align-i-center">
@@ -221,7 +221,7 @@ get_header();
 			<div class="container">
 				<h2 class="preaching-title">
 					<?php pll_e( 'Cлово настоятеля' ); ?>
-					<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+					<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 				</h2>
 				<div class="word-link-wrapper d-flex justify-center">
 					<a href="#word-item_preaching" class="word active">
@@ -311,7 +311,7 @@ get_header();
 							</div>
 					</div>
 
-					<!-- <div id="word-item_lecture" class="word-item">
+					<div id="word-item_lecture" class="word-item">
 						<?php 
 							$dmz_abbot_word_post = get_posts( [
 
@@ -325,64 +325,67 @@ get_header();
 								],
 								'numberposts' => 10, 
 
-							] );
-								$i = 0;
-								foreach( $dmz_abbot_word_post as $post ):	setup_postdata( $post );
-								$image_url = dmz_get_meta( 'foto_min_abbot-word' );
-								if( $i == 0 ): ?>
-								<div class="preaching-image-respons">
+							] ); ?>
+								<div class="preaching-slider-main">
+
+								<?php 
+									foreach( $dmz_abbot_word_post as $post ):	setup_postdata( $post );
+									$image_url = dmz_get_meta( 'foto_min_abbot-word' ); 
+								?>
+
+								<div>								
 									<figure class="preaching-image">
 										<?php if( get_the_post_thumbnail_url( $post->ID, 'preaching-home' ) ): ?>
 											<img src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID,'preaching-home' ) ); ?>" alt="Preaching">
 										<?php endif; ?>
 										<figcaption>
-											<div class="preaching-image__wrap d-flex align-i-end">
-												<?php if( wp_get_attachment_image_url( $image_url, 'thumbnail' ) ): ?>
-													<div class="preaching-image__author-image">
-														<img src="<?php echo esc_url( wp_get_attachment_image_url( $image_url, 'thumbnail' ) ); ?>" alt="Author">
-													</div>
-												<?php endif; ?>
-												<?php if( dmz_get_meta( 'word_abbot-word' ) ): ?>
-													<a class="preaching-image__links preaching-image__links_video" href="<?php echo esc_url( dmz_get_meta( 'word_abbot-word' ) ); ?>" data-fancybox>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
-													</a>
-												<?php endif; ?>
-											</div>
-											<span class="preaching-image__date"> 
-												<?php echo esc_html( get_the_date( 'd.m.Y' ) ); ?>
-											</span>
+											<?php if( dmz_get_meta( 'word_abbot-word' ) ): ?>
+												<a class="preaching-image__links" href="<?php echo esc_url( dmz_get_meta( 'word_abbot-word' ) ); ?>" data-fancybox>
+													<img src="<?php echo esc_url( $dmz_link_assets . '/img/play.svg' ); ?>" alt="Play">
+												</a>
+											<?php endif; ?>
+											<p class="preaching-image__desc">
+												<?php echo esc_html( dmz_get_meta( 'subtitle_abbot-word' ) ); ?>
+												<span class="preaching-image__date"> 
+													<?php echo esc_html( get_the_date( 'd.m.Y' ) ); ?><?php pll_e( 'г.' ); ?>													
+												</span>
+											</p>
 											<h4 class="preaching-image__title">
 												<a href="<?php echo esc_url( get_permalink() ); ?>">
 													<?php echo get_the_title(); ?>
 												</a>
 											</h4>
-											<p class="preaching-image__desc">
+										</figcaption>
+										<button class="preaching-prev">
+											<img src="<?php echo esc_url( $dmz_link_assets . '/img/prev.svg' ); ?>" alt="Prev">
+										</button>
+										<button class="preaching-next">
+											<img src="<?php echo esc_url( $dmz_link_assets . '/img/next.svg' ); ?>" alt="Next">
+										</button>
+									</figure>
+								</div>
+
+								<?php endforeach; wp_reset_postdata(); ?>
+
+							</div>
+
+							<div class="preaching-slider">
+
+								<?php foreach( $dmz_abbot_word_post as $post ):	setup_postdata( $post ); ?>	
+									<figure class="preaching-slider__img">
+										<img src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID,'preaching-home' ) ); ?>" alt="Preaching">
+										<figcaption>
+											<span class="preaching-slider__date"> 
+												<?php echo esc_html( get_the_date( 'd.m.Y' ) ); ?><?php pll_e( 'г.' ); ?>												
+											</span>
+											<p class="preaching-slider__desc">
 												<?php echo esc_html( dmz_get_meta( 'subtitle_abbot-word' ) ); ?>
 											</p>
 										</figcaption>
 									</figure>
-								</div>
-								<div class="preaching-slider">
-								<?php else: ?>
-							
-									<div class="preaching-item">
-										<span class="preaching-item__date">
-											<?php echo esc_html( get_the_date( 'd.m.Y' ) ); ?>
-										</span>
-										<?php if( dmz_get_meta( 'word_abbot-word' ) ): ?>
-											<a class="preaching-item__video" href="<?php echo esc_url( dmz_get_meta( 'word_abbot-word' ) ); ?>" data-fancybox>
-												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
-											</a>
-										<?php endif; ?>
-										<h4 class="preaching-item__title">
-											<a href="<?php echo esc_url( get_permalink() ); ?>">
-												<?php echo get_the_title(); ?>
-											</a>
-										</h4>
-									</div>
-								<?php endif; $i++; endforeach;	wp_reset_postdata(); ?>
-						</div>
-					</div> -->
+								<?php endforeach;  wp_reset_postdata(); ?> 
+							</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -401,7 +404,7 @@ get_header();
                 <div class="container">
                     <h2 class="uncos-title">
                        <?php pll_e( 'Клуб «О православии с интересом»' ); ?>
-                        <img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+                        <img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
                     </h2>
                     <div class="uncos-block card-block d-flex">
                     <?php
@@ -461,7 +464,7 @@ get_header();
 
 		<section class="abbot" id="abbot">
 		  <div class="container">
-			 <h2 class="abbot-title"><?php pll_e( 'О Настоятеле храма' ); ?><img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator"></h2>
+			 <h2 class="abbot-title"><?php pll_e( 'О Настоятеле храма' ); ?><img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator"></h2>
 			 <div class="abbot-item d-flex justify-center">
 				<form id="abbot-form" class="abbot-form">
 					<h3 class="abbot-form__title"><?php pll_e( 'Задать вопрос настоятелю' ); ?></h3>
@@ -508,7 +511,7 @@ get_header();
 				<div class="answers">
 					<h3 class="answers-title">
 						<?php pll_e( 'Ответы на Вопросы' ); ?>
-						<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+						<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 					</h3>
 					<div class="answers-item">
 
@@ -561,7 +564,7 @@ get_header();
 		  <div class="container-fluid">
 			 <h2 class="insta-title">
 				Фотогалерея
-				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 			 </h2>
 
 			<?php foreach( $dmz_gallery_post as $post ):	setup_postdata( $post );

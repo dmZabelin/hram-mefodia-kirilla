@@ -14,7 +14,7 @@
 		<div class="container">
 			<h2 class="archive-title">
 				<?php pll_e( 'Cлово настоятеля' ); ?>
-				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 			</h2>
 			<div class="preaching-link-wrapper d-flex justify-center">
 				<a href="#preaching-items_preaching" class="preaching-link active">

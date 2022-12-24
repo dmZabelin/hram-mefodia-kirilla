@@ -13,7 +13,7 @@
 		<div class="container">
 			<h2 class="archive-title">
 			    <?php pll_e( 'Одесская Епархия' ); ?>
-				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 			</h2>
 			<div class="info-items"> 
 				<?php

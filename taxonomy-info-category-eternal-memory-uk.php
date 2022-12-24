@@ -8,7 +8,7 @@
 		<div class="container">
 			<h2 class="category-title">
 				<?php echo single_cat_title(); ?>
-				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 			</h2>
 			<div class="category-content">
 				<div class="eternal-memory-item d-flex justify-center">

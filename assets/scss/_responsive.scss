@@ -1,522 +1,515 @@
 /* Large Devices, Wide Screens more > 1200px*/
 @media screen and (min-width: 1200px) {
-	/* BASE */
+  /* BASE */
 }
 
 /* Large Devices, Wide Screens 992px - 1200px*/
 @media only screen and (max-width: 1200px) {
-	html {
-		font-size: 50%;
-	}
-	.btn {
-		max-width: 13.86em;
-	}
-	.preaching-slider {
-		.slick-track {
-			padding: 0 2rem;
-		}
-	}
-	.memory-person-image,
-	.father-vladimir {
-		img {
-			width: 210px;
-			height: 272px;
-		}
-	}
-	img.alignnone {
-		width: 100%;
-		height: auto;
-	}
-	img.church-history {
-		width: 250px;
-		height: 333px;
-	}
+  html {
+    font-size: 50%;
+  }
+  .btn {
+    max-width: 13.86em;
+  }
+  .preaching-slider {
+    .slick-track {
+      padding: 0 2rem;
+    }
+  }
+  .memory-person-image,
+  .father-vladimir {
+    img {
+      width: 210px;
+      height: 272px;
+    }
+  }
+  img.alignnone {
+    width: 100%;
+    height: auto;
+  }
+  img.church-history {
+    width: 250px;
+    height: 333px;
+  }
 }
 
 /* Medium Devices, Desktops 768px - 992px */
 @media only screen and (max-width: 992px) {
-	/* BASE */
-	.main-info__title {
-		width: 70rem;
-		margin-right: -24rem;
-	}
-	.main-menu {
-		display: none;
-	}
-	.main-info__contacts {
-		margin-right: 0;
-		padding-right: 1rem;
-	}
-	.main-info__title img {
-		top: 1rem;
-		width: 10rem;
-	}
-	.main-info__image img {
-		margin-right: 14.5rem;
-	}
-	.schedule-item-image {
-		opacity: 0.5;
-		bottom: -50px;
-		right: -10rem;
-	}
-	.uncos-main {
-		margin-right: 1.5rem;
-	}
-	.abbot-item,
-	article.poster .poster-item,
-	.uncos-block {
-		padding: 0 1.3rem;
-	}
-	article.poster .poster-item {
-		&::after {
-			left: 10px;
-		}
-		&::before {
-			right: 10px;
-		}
-	}
+  /* BASE */
+  .main-info__title {
+    width: 70rem;
+    margin-right: -24rem;
+  }
+  .main-menu {
+    display: none;
+  }
+  .main-info__contacts {
+    margin-right: 0;
+    padding-right: 1rem;
+  }
+  .main-info__title img {
+    top: 1rem;
+    width: 10rem;
+  }
+  .main-info__image img {
+    margin-right: 14.5rem;
+  }
+  .schedule-item-image {
+    opacity: 0.5;
+    bottom: -50px;
+    right: -10rem;
+  }
+  .uncos-main {
+    margin-right: 1.5rem;
+  }
+  .abbot-item,
+  article.poster .poster-item,
+  .uncos-block {
+    padding: 0 1.3rem;
+  }
+  article.poster .poster-item {
+    &::after {
+      left: 10px;
+    }
+    &::before {
+      right: 10px;
+    }
+  }
 
-	.abbot-form {
-		margin-right: 2.5rem;
-		padding-bottom: 5rem;
-		.btn {
-			width: 100%;
-			max-width: none;
-			margin-top: 3rem;
-		}
-	}
+  .abbot-form {
+    margin-right: 2.5rem;
+    padding-bottom: 5rem;
+    .btn {
+      width: 100%;
+      max-width: none;
+      margin-top: 3rem;
+    }
+  }
 
-	.btn-wraper {
-		flex-direction: column;
-		align-items: center;
-	}
+  .btn-wraper {
+    flex-direction: column;
+    align-items: center;
+  }
 
-	.answers {
-		padding-top: 2rem;
-	}
-	.preaching {
-		.container {
-			padding: 0 1.3rem;
-		}
-	}
-	.single-post {
-		.container {
-			padding: 0 1.3rem;
-		}
-	}
-	.preaching-slider {
-		max-width: 60rem;
-	}
+  .answers {
+    padding-top: 2rem;
+  }
+  .preaching {
+    .container {
+      padding: 0 1.3rem;
+    }
+  }
+  .single-post {
+    .container {
+      padding: 0 1.3rem;
+    }
+  }
 
-	.gallery-box {
-		.gallery-item {
-			width: 23%;
-			&:nth-child(10),
-			&:nth-child(9) {
-				display: none;
-			}
-		}
-	}
+  .gallery-box {
+    .gallery-item {
+      width: 23%;
+      &:nth-child(10),
+      &:nth-child(9) {
+        display: none;
+      }
+    }
+  }
 
-	.header {
-		.container {
-			padding: 0 1.3rem;
-		}
-	}
-	.humburger-wrap {
-		display: flex !important;
-	}
-	.info-items {
-		padding: 0 1.3rem;
-		justify-content: center;
-		grid-template: repeat(4, minmax(auto, auto)) / repeat(3, minmax(27rem, 30rem));
-		grid-template-areas:
-			"card_one card_one card_two"
-			"card_three card_four card_five"
-			"card_seven card_six card_six"
-			"card_eight card_nine card_ten";
-		gap: 3rem;
-	}
-	.contacts-info {
-		padding: 5rem;
-	}
-	.g-recaptcha {
-		transform-origin: center;
-	}
+  .header {
+    .container {
+      padding: 0 1.3rem;
+    }
+  }
+  .humburger-wrap {
+    display: flex !important;
+  }
+  .info-items {
+    padding: 0 1.3rem;
+    justify-content: center;
+    grid-template: repeat(4, minmax(auto, auto)) / repeat(3, minmax(27rem, 30rem));
+    grid-template-areas:
+      'card_one card_one card_two'
+      'card_three card_four card_five'
+      'card_seven card_six card_six'
+      'card_eight card_nine card_ten';
+    gap: 3rem;
+  }
+  .contacts-info {
+    padding: 5rem;
+  }
+  .g-recaptcha {
+    transform-origin: center;
+  }
+  .preaching-image figcaption {
+    padding: 5rem;
+  }
 }
 
 /* Small Devices, Tablets 577px - 768px */
 @media only screen and (max-width: 768px) {
-	/* BASE */
-	.main-slider {
-		display: none;
-	}
-	.main-info {
-		width: 100%;
-		text-align: center;
-	}
-	.main-info__image {
-		width: 100%;
-		img {
-			margin-right: 0;
-		}
-	}
-	.main-info__title {
-		width: 100%;
-		margin-right: 0;
-		margin: auto;
-		background: none;
-		padding: 2rem 0 4rem 0rem;
-	}
-	.main-info__contacts {
-		text-align: left;
-		margin: auto;
-	}
+  /* BASE */
+  .main-slider {
+    display: none;
+  }
+  .main-info {
+    width: 100%;
+    text-align: center;
+  }
+  .main-info__image {
+    width: 100%;
+    img {
+      margin-right: 0;
+    }
+  }
+  .main-info__title {
+    width: 100%;
+    margin-right: 0;
+    margin: auto;
+    background: none;
+    padding: 2rem 0 4rem 0rem;
+  }
+  .main-info__contacts {
+    text-align: left;
+    margin: auto;
+  }
 
-	.schedule-item-download {
-		top: 13rem;
-		left: 1rem;
-	}
+  .schedule-item-download {
+    top: 13rem;
+    left: 1rem;
+  }
 
-	.uncos-block {
-		flex-direction: column;
-		max-width: 74rem;
-		margin: auto;
-	}
-	.preaching-image-respons {
-		width: 100%;
-		padding-top: 60.15%;
-	}
-	.uncos-item {
-		width: 100%;
-		margin: auto;
-	}
-	.uncos-all {
-		margin-top: 5rem;
-	}
+  .uncos-block {
+    flex-direction: column;
+    max-width: 74rem;
+    margin: auto;
+  }
+  .preaching-image-respons {
+    width: 100%;
+    padding-top: 60.15%;
+  }
+  .uncos-item {
+    width: 100%;
+    margin: auto;
+  }
+  .uncos-all {
+    margin-top: 5rem;
+  }
 
-	.abbot-item {
-		flex-direction: column-reverse;
-	}
-	.abbot-form,
-	.abbot-info {
-		width: 100%;
-		max-width: 74rem;
-		margin: auto;
-	}
-	.abbot-info__image {
-		img {
-			margin: auto;
-		}
-	}
-	.abbot-info {
-		margin-bottom: 4rem;
-	}
+  .abbot-item {
+    flex-direction: column-reverse;
+  }
+  .abbot-form,
+  .abbot-info {
+    width: 100%;
+    max-width: 74rem;
+    margin: auto;
+  }
+  .abbot-info__image {
+    img {
+      margin: auto;
+    }
+  }
+  .abbot-info {
+    margin-bottom: 4rem;
+  }
 
-	.answers-info {
-		padding: 3rem 1.3rem 0;
-	}
+  .answers-info {
+    padding: 3rem 1.3rem 0;
+  }
 
-	.gallery-box {
-		.gallery-item {
-			width: 30%;
-			&:nth-child(8),
-			&:nth-child(7) {
-				display: none;
-			}
-		}
-	}
-	.preaching-image-respons .preaching-image figcaption {
-		padding: 1.75rem;
-		.preaching-image__author-image {
-			width: 7rem;
-			height: 7rem;
-		}
-	}
-	.preaching-image-respons .preaching-image figcaption .preaching-image__links {
-		width: 5rem;
-		height: 5rem;
-		font-size: 2rem;
-	}
+  .gallery-box {
+    .gallery-item {
+      width: 30%;
+      &:nth-child(8),
+      &:nth-child(7) {
+        display: none;
+      }
+    }
+  }
 
-	.about-item,
-	.poster-item {
-		padding: 2em;
-		flex-direction: column;
-	}
-	.about-item__image,
-	.about-item__info,
-	.poster-item__image,
-	.poster-item__info {
-		width: 100%;
-	}
-	.about-item__image,
-	.poster-item__image {
-		max-width: 58.8rem;
-	}
-	.about-item__info,
-	.poster-item__info {
-		margin-left: 0;
-	}
-	article.poster {
-		.poster-item__info {
-			width: 100%;
-			max-width: 70rem;
-			margin: auto;
-			padding: 0 2rem;
-		}
-		.poster-item__title {
-			text-align: center;
-		}
-		.poster-item__desc {
-			margin-left: 0;
-		}
-	}
+  .preaching-image figcaption {
+    padding: 3rem;
+  }
+  .preaching-slider__img figcaption {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
 
-	.info-items {
-		grid-template: repeat(6, minmax(auto, auto)) / repeat(2, minmax(27rem, 30rem));
-		grid-template-areas:
-			"card_one card_one"
-			"card_two card_three"
-			"card_four card_five"
-			"card_six card_six"
-			"card_seven card_eight"
-			"card_nine card_ten";
-		gap: 1.5rem;
-	}
-	.g-recaptcha {
-		transform: scale(1);
-	}
-	.post-item__info {
-		width: 70%;
-	}
-	.post-item__image {
-		width: 30%;
-		img {
-			width: 100% !important;
-			height: auto;
-		}
-	}
-	.archive-gallery-list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		text-align: center;
-	}
+  .about-item,
+  .poster-item {
+    padding: 2em;
+    flex-direction: column;
+  }
+  .about-item__image,
+  .about-item__info,
+  .poster-item__image,
+  .poster-item__info {
+    width: 100%;
+  }
+  .about-item__image,
+  .poster-item__image {
+    max-width: 58.8rem;
+  }
+  .about-item__info,
+  .poster-item__info {
+    margin-left: 0;
+  }
+  article.poster {
+    .poster-item__info {
+      width: 100%;
+      max-width: 70rem;
+      margin: auto;
+      padding: 0 2rem;
+    }
+    .poster-item__title {
+      text-align: center;
+    }
+    .poster-item__desc {
+      margin-left: 0;
+    }
+  }
 
-	.archive-gallery-list__item {
-		flex-direction: column;
-		width: 100%;
-		max-width: 320px;
-		margin: 0 1rem;
-		margin-bottom: 1rem !important;
-	}
-	.archive-gallery-list__link {
-		width: 100%;
-		max-width: 18rem;
-		margin: 1rem auto;
-	}
-	.archive-gallery-list__date {
-		width: 100%;
-		margin-bottom: 1rem;
-	}
+  .info-items {
+    grid-template: repeat(6, minmax(auto, auto)) / repeat(2, minmax(27rem, 30rem));
+    grid-template-areas:
+      'card_one card_one'
+      'card_two card_three'
+      'card_four card_five'
+      'card_six card_six'
+      'card_seven card_eight'
+      'card_nine card_ten';
+    gap: 1.5rem;
+  }
+  .g-recaptcha {
+    transform: scale(1);
+  }
+  .post-item__info {
+    width: 70%;
+  }
+  .post-item__image {
+    width: 30%;
+    img {
+      width: 100% !important;
+      height: auto;
+    }
+  }
+  .archive-gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
 
-	.memory-person-image,
-	.father-vladimir {
-		img {
-			width: 180px;
-			height: 233px;
-		}
-	}
-	img.church-history {
-		width: 180px;
-		height: 240px;
-	}
-	.gallipoly {
-		text-align: center;
-		img {
-			float: none;
-			margin: 0 auto 2rem;
-			width: 100% !important;
-			max-width: 55rem !important;
-		}
-	}
-	.gallipoly_one {
-		flex-direction: column;
-	}
-	.gallipoly_two {
-		flex-direction: column-reverse;
-	}
+  .archive-gallery-list__item {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 1rem;
+    margin-bottom: 1rem !important;
+  }
+  .archive-gallery-list__link {
+    width: 100%;
+    max-width: 18rem;
+    margin: 1rem auto;
+  }
+  .archive-gallery-list__date {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .memory-person-image,
+  .father-vladimir {
+    img {
+      width: 180px;
+      height: 233px;
+    }
+  }
+  img.church-history {
+    width: 180px;
+    height: 240px;
+  }
+  .gallipoly {
+    text-align: center;
+    img {
+      float: none;
+      margin: 0 auto 2rem;
+      width: 100% !important;
+      max-width: 55rem !important;
+    }
+  }
+  .gallipoly_one {
+    flex-direction: column;
+  }
+  .gallipoly_two {
+    flex-direction: column-reverse;
+  }
 }
 
 /* Small Devices, Tablets 450px - 577px */
 @media only screen and (max-width: 577px) {
-	/* BASE */
-	.main-info__title {
-		max-width: 320px;
-		span:last-child {
-			line-height: 1.6;
-		}
-		img {
-			display: none;
-		}
-	}
-	.main-info__contacts i.fas {
-		display: none;
-	}
-	.schedule-item-download {
-		bottom: 20px;
-		top: auto;
-		left: 0;
-		width: 100%;
-		max-width: none;
-	}
-	.schedule-item-image {
-		display: none;
-	}
-	.schedule-item {
-		padding: 10rem 1.5rem 13rem 1.5rem;
-	}
+  /* BASE */
+  .main-info__title {
+    max-width: 320px;
+    span:last-child {
+      line-height: 1.6;
+    }
+    img {
+      display: none;
+    }
+  }
+  .main-info__contacts i.fas {
+    display: none;
+  }
+  .schedule-item-download {
+    bottom: 20px;
+    top: auto;
+    left: 0;
+    width: 100%;
+    max-width: none;
+  }
+  .schedule-item-image {
+    display: none;
+  }
+  .schedule-item {
+    padding: 10rem 1.5rem 13rem 1.5rem;
+  }
 
-	.preaching-image__desc {
-		display: none;
-	}
-	.gallery-box {
-		.gallery-item {
-			width: 45%;
-		}
-	}
-	.preaching-slider {
-		max-width: 35rem;
-	}
-	.about-item {
-		padding: 0 1.3rem 3rem;
-	}
+  .gallery-box {
+    .gallery-item {
+      width: 45%;
+    }
+  }
+  .about-item {
+    padding: 0 1.3rem 3rem;
+  }
 
-	.info-items {
-		grid-template: repeat(10, minmax(auto, auto)) / repeat(2, minmax(16rem, auto));
-		grid-template-areas:
-			"card_one card_one"
-			"card_two card_two"
-			"card_three card_three"
-			"card_four card_four"
-			"card_five card_five"
-			"card_six card_six"
-			"card_seven card_seven"
-			"card_eight card_eight"
-			"card_nine card_nine"
-			"card_ten card_ten";
-		gap: 0;
-		row-gap: 3rem;
-	}
+  .info-items {
+    grid-template: repeat(10, minmax(auto, auto)) / repeat(2, minmax(16rem, auto));
+    grid-template-areas:
+      'card_one card_one'
+      'card_two card_two'
+      'card_three card_three'
+      'card_four card_four'
+      'card_five card_five'
+      'card_six card_six'
+      'card_seven card_seven'
+      'card_eight card_eight'
+      'card_nine card_nine'
+      'card_ten card_ten';
+    gap: 0;
+    row-gap: 3rem;
+  }
 
-	.info-card {
-		box-shadow: inset 0px -150px 250px -50px rgba(33, 81, 132, 1);
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		padding: 2rem;
-		.info-card__image {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-		}
-		color: $white;
-		.info-card__title {
-			font-size: 1.8rem;
-			padding: 0;
-			background: none;
-			max-width: none;
-			margin: 0;
-		}
-		.info-card__link {
-			&:after {
-				background: $white;
-			}
-		}
-		.info-card__desc {
-			flex: none;
-		}
-	}
+  .info-card {
+    box-shadow: inset 0px -150px 250px -50px rgba(33, 81, 132, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    .info-card__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    color: $white;
+    .info-card__title {
+      font-size: 1.8rem;
+      padding: 0;
+      background: none;
+      max-width: none;
+      margin: 0;
+    }
+    .info-card__link {
+      &:after {
+        background: $white;
+      }
+    }
+    .info-card__desc {
+      flex: none;
+    }
+  }
 
-	section.contacts {
-		flex-direction: column;
-	}
-	.contacts-info,
-	.map-wrapper {
-		width: 100%;
-	}
-	.map-wrapper {
-		height: 35rem;
-	}
-	.contacts-info-wrapper {
-		margin-left: 0;
-	}
-	.post-item__wrapper {
-		flex-direction: column;
-	}
-	.post-item_right .post-item__info {
-		width: 100%;
-		margin-right: 0;
-		h4 {
-			text-align: center;
-		}
-		p {
-			margin: auto;
-		}
-	}
-	.post-item__image {
-		margin: auto;
-		margin-top: 2rem;
-		width: 100%;
-		max-width: 320px;
-	}
-	.memory-person-image,
-	.father-vladimir {
-		.alignleft {
-			float: none;
-			margin: 0 auto 2rem;
-			display: block;
-		}
-		img {
-			width: 270px;
-			height: auto;
-		}
-	}
-	img.church-history {
-		width: 300px;
-		height: auto;
-		float: none;
-		margin: 0 auto 2rem;
-		display: block;
-	}
+  section.contacts {
+    flex-direction: column;
+  }
+  .contacts-info,
+  .map-wrapper {
+    width: 100%;
+  }
+  .map-wrapper {
+    height: 35rem;
+  }
+  .contacts-info-wrapper {
+    margin-left: 0;
+  }
+  .post-item__wrapper {
+    flex-direction: column;
+  }
+  .post-item_right .post-item__info {
+    width: 100%;
+    margin-right: 0;
+    h4 {
+      text-align: center;
+    }
+    p {
+      margin: auto;
+    }
+  }
+  .post-item__image {
+    margin: auto;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 320px;
+  }
+  .memory-person-image,
+  .father-vladimir {
+    .alignleft {
+      float: none;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+    img {
+      width: 270px;
+      height: auto;
+    }
+  }
+  img.church-history {
+    width: 300px;
+    height: auto;
+    float: none;
+    margin: 0 auto 2rem;
+    display: block;
+  }
+  .preaching-slider {
+    display: none;
+  }
 }
 
 /* Extra Small Devices, Phones 320px - 450px*/
 @media only screen and (max-width: 450px) {
-	/* BASE */
-	.uncos-all__pic {
-		display: none;
-	}
-	.uncos-all__info {
-		width: 100%;
-		padding: 0 1rem;
-	}
-	.preaching-image figcaption .preaching-image__title {
-		font-size: 1.8rem;
-	}
-	.word-link-wrapper,
-	.preaching-link-wrapper {
-		flex-direction: column;
-		text-align: center;
-	}
+  /* BASE */
+  .uncos-all__pic {
+    display: none;
+  }
+  .uncos-all__info {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .preaching-image figcaption .preaching-image__title {
+    font-size: 1.8rem;
+  }
+  .word-link-wrapper,
+  .preaching-link-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
 
-	.preaching-link-wrapper span,
-	.word-link-wrapper span {
-		margin: 1rem 0;
-	}
+  .preaching-link-wrapper span,
+  .word-link-wrapper span {
+    margin: 1rem 0;
+  }
 }

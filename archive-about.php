@@ -14,7 +14,7 @@
 		  <div class="container">
 				<h2 class="archive-title">
 					<?php pll_e( 'О храме' ); ?>
-					<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+					<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 				</h2>	
 
 			 <?php $dmz_about_terms = get_terms( [
@@ -58,7 +58,7 @@
 				<div class="container">
 					<h2 class="clergy-title">
 						<?php pll_e( 'Клирики храма' ); ?>
-						<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+						<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 					</h2>
 					<div class="clergy-item d-flex justify-center">
 

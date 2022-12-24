@@ -27,26 +27,6 @@ jQuery(function ($) {
       arrows: false,
       centerMode: true,
       slidesToShow: 3,
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-        {
-          breakpoint: 577,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-      ],
     });
   }
 
@@ -255,6 +235,7 @@ jQuery(function ($) {
     e.preventDefault();
     tab_word.hide();
     tab_word.filter(this.hash).show();
+    $('.preaching-slider-main').slick('refresh');
     $('.preaching-slider').slick('refresh');
     $('.word').removeClass('active');
     $(this).addClass('active');

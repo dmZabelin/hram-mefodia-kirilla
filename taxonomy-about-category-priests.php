@@ -14,7 +14,7 @@
 		<div class="container">
 			<h2 class="category-title">
 				СВЯЩЕННОСЛУЖИТЕЛИ И ЦЕРКОВНОСЛУЖИТЕЛИ
-				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.png' ); ?>" alt="Separator">
+				<img src="<?php echo esc_url( $dmz_link_assets . '/img/separator.svg' ); ?>" alt="Separator">
 				<p class="category-subtitle">
 				<?php echo get_queried_object()->description; ?>
 				</p>
