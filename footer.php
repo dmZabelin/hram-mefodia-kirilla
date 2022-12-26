@@ -17,7 +17,7 @@ $dmz_link_assets = DMZ_URL_ASSETS;
 					<span> 
 						<?php pll_e( 'Cайт разработан:' ); ?> 
 					</span>
-					<a href="https://dmzabelin.online" target="_blank">
+					<a href="https://dmz.name" target="_blank">
 						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/logo-dm.zabelin.svg' ); ?>" alt="Logo dm-zabelin">
 					</a>
 				</div>

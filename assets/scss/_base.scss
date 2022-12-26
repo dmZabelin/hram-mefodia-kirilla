@@ -172,26 +172,37 @@ h4 {
   position: fixed;
   z-index: 98;
   top: 0;
-  display: flex;
   width: 100%;
   height: 100%;
-  padding-top: 13rem;
   transition: 1s;
   transform: translate3d(-100%, 0, 0);
-  text-align: center;
   background: $blue;
-  align-items: flex-start;
-  justify-content: center;
-  opacity: 0.9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  nav {
+    width: 100%;
+    height: calc(100vh - 6rem);
+  }
 }
 .mobile-menu {
-  margin-top: 3rem;
+  width: 100%;
+  height: 100%;
+  padding: 9rem 3rem 3rem;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
   li {
-    margin-bottom: 3rem;
     text-transform: uppercase;
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
     a {
       color: $white;
       font-size: 2rem;
+      text-align: left !important;
     }
   }
 }
