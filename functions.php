@@ -4,7 +4,6 @@
  "dmz_theme" - functions and definitions
  *! DO NOT DELETE 
  ****************************************************************/
-
 if ( get_stylesheet_directory() == get_template_directory() ) {
 
 	define( 'DMZ_THEME_DIR', get_template_directory() . '/dmz_theme' );
